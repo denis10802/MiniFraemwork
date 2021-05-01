@@ -31,7 +31,7 @@ class QueryBuilder
         return $result = $statement->fetch(PDO::FETCH_OBJ);
     }
 
-    public function get($table, $where){
+    public function get($table, $where = []){
         $keys = array_keys($where);
         $string = "";
 
@@ -120,5 +120,6 @@ class QueryBuilder
         $statement->execute();
         return $statement->rowCount();
     }
+
 
 }
