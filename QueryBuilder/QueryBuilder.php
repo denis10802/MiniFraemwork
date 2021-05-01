@@ -58,15 +58,6 @@ class QueryBuilder
 
     }
 
-    public function create($table, $data){
-        $keys = implode(',',array_keys($data));
-        $tags = ":". implode(',:',array_keys($data));
-        $sql = "INSERT INTO {$table} ({$keys}) VALUES ({$tags})";
-
-        $statement = $this->pdo->prepare($sql);
-        $statement -> execute($data);
-    }
-
     public function update($table, $data, $id){
 
         $keys = array_keys($data);
